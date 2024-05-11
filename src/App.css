@@ -1,0 +1,105 @@
+/* Globel CSS */
+body {
+  font-family: Arial, sans-serif !important; 
+  font-size: 16px;
+}
+h6{
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 5px !important;
+}
+p{
+  line-height: 30px;
+  font-size: 16px !important;
+}
+@media screen and (max-width:1279px) {
+  p{
+    font-size: 14px !important;
+  }
+}
+
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none !important;
+}
+.main_page{
+  padding-top: 135px;
+}
+/* Globel CSS */
+
+/* Header CSS */
+.sub_Header a Span{
+  gap:8px;
+  grid-gap: 8px;
+}
+.sub_Header > a:hover, .sub_Header > button:hover, .sub_Header .active{
+  background-color: #fbdf13;
+  transition: all .2s;
+}
+/* Header CSS */
+
+.home-tabs-section .home-tab:hover{
+  background-color: #fbdf13 !important;
+  transition: all .2s;
+}
+
+@media screen and (min-width: 1024px) {
+  .bg{
+   background: url('./assets/bajiviadmin.jpeg');
+   background-repeat: no-repeat;
+   background-size: cover;
+  }
+  .sidebar {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    margin-left: calc(50% - 300px);
+  }
+}
+
+.invert-white {
+  filter: invert(100%);
+}
+
+
+
+.sub_Header a span{
+  display: flex;
+  align-items: center;
+}
+.sub_Header a span svg{
+  margin-right: 5px;
+
+}
+.home-tabs-section.all-tabs .active{
+  border: 2px solid #fbdf13;
+}
+
+/* 1280 */
+@media screen and (max-width:1280px){
+  .main_page{
+    padding-top: 55px;
+  }
+  .main_page .home-tabs-section .home-tab{
+      background-color: transparent !important;
+  }
+  .main_page .home-tabs-section .home-tab svg,
+  .main_page .home-tabs-section .home-tab img{
+      padding: 13px;
+      height: 55px;
+      width: 55px !important;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+  }
+  .main_page .home-tabs-section .home-tab img{
+    height: auto;
+    width: 55px;
+    padding: 13px;
+  }
+  .main_page .home-tabs-section .home-tab a{
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
