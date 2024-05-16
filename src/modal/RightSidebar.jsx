@@ -7,19 +7,30 @@ import {
   useDisclosure,
   Button,
   VStack,
-  Link 
+  Link,
+  Box,
 } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom'; // Optional for router
 import React from 'react';
 import { IoMenu } from 'react-icons/io5';
+import { CiMenuBurger } from "react-icons/ci";
+import { useSelector } from "react-redux";
+
 
 function RightSidebar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-
+  const {
+    bgGray,
+  } = useSelector((state) => state.theme);
   return (
     <>
-      <IoMenu ref={btnRef} onClick={onOpen} fontSize={"30px"} color="black"  display={{base:'none',xl:'block'}}/>
+    <Box display={{base:"none", xl:"block"}}>
+    <Box  style={{backgroundColor: bgGray,}} borderRadius="5px" width="50px" height="50px" padding="13px">
+      <CiMenuBurger ref={btnRef} onClick={onOpen} fontSize={"25px"} 
+      color="black"
+      />
+      </Box>
 
       <Drawer
         isOpen={isOpen}
@@ -31,20 +42,22 @@ function RightSidebar() {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerBody>
-            <VStack align="start">
-              <Link as={RouterLink} to="/Reward-Points" fontSize="lg" fontWeight="bold">Reward Points</Link>
-              <Link as={RouterLink} to="/vip-page" fontSize="lg" fontWeight="bold">VIP</Link>
-              <Link as={RouterLink} to="/blog" fontSize="lg" fontWeight="bold">Blog</Link>
-              <Link as={RouterLink} to="/AffiliateProgram" fontSize="lg" fontWeight="bold">Affiliate Program</Link>
-              <Link as={RouterLink} to="/spin-and-win" fontSize="lg" fontWeight="bold">Brand Ambassador</Link>
-              <Link as={RouterLink} to="/faq" fontSize="lg" fontWeight="bold">FAQ</Link>
-              <Link as={RouterLink} to="/terms-and-conditions" fontSize="lg" fontWeight="bold">Terms and Conditions</Link>
-              <Link as={RouterLink} to="/disconnection-policy" fontSize="lg" fontWeight="bold">Disconnection Policy</Link>
-              <Link as={RouterLink} to="/responsible-gambling" fontSize="lg" fontWeight="bold">Responsible Gambling</Link>
+            <VStack align="start" gap= '20px' fontSize="16px">
+              <Link as={RouterLink} to="/Reward-Points" fontSize="base" fontWeight="bold">Reward Points</Link>
+              <Link as={RouterLink} to="/vip-page" fontSize="base" fontWeight="bold">VIP</Link>
+              <Link as={RouterLink} to="/blog" fontSize="base" fontWeight="bold">Blog</Link>
+              <Link as={RouterLink} to="/affiliate-program" fontSize="base" fontWeight="bold">Affiliate Program</Link>
+              <Link as={RouterLink} to="/Brand-Ambassador" fontSize="base" fontWeight="bold">Brand Ambassador</Link>
+              <Link as={RouterLink} to="/faq" fontSize="base" fontWeight="bold">FAQ</Link>
+              <Link as={RouterLink} to="/PrivacyPolicy" fontSize="base" fontWeight="bold">Privacy Policy</Link>
+              <Link as={RouterLink} to="/terms-and-conditions" fontSize="base" fontWeight="bold">Terms and Conditions</Link>
+              <Link as={RouterLink} to="/Disconnection-Policy" fontSize="base" fontWeight="bold">Disconnection Policy</Link>
+              <Link as={RouterLink} to="/Responsible-Gambling" fontSize="base" fontWeight="bold">Responsible Gambling</Link>
             </VStack>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
+    </Box>
     </>
   );
 }

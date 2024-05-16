@@ -19,7 +19,24 @@ import Lottery from '../page/Lottery'
 import CockFight from '../page/CockFight'
 import Racing from '../page/Racing'
 import Promotion from '../page/Promotion'
-import AffiliateProgram from '../page/AffiliateProgram'
+import Faq from '../page/Faq'
+import PrivacyPolicy from '../page/PrivacyPolicy'
+import TermConditions from '../page/TermsCondition'
+import DisconnectionPolicy from '../page/DisconnectionPolicy'
+import Responsible from '../page/Responsible'
+import InfoAndPayment from '../page/InfoAndPayment';
+import Account from '../page/Account'
+import MobileLeftSideBar from '../modal/MobileLeftSideBar'
+import Deposit from '../page/Deposit'
+import Upi from '../component/deposit-component/Upi'
+import Usdt from '../component/deposit-component/Usdt'
+import InfoMobileHeader from '../component/InfoMobileHeader'
+import ChangePassword from '../component/All-Page-Tabs/Account-component/ChangePassword'
+import ContactUs from '../page/ContactUs'
+import Ambassador from '../page/Ambassador'
+import  BankAccountForm from '../page/BankAccountForm' 
+import WithDraw from '../page/WithDraw'
+import Records from '../page/Records'
 
 
 const AllRoute = () => {
@@ -46,7 +63,24 @@ const AllRoute = () => {
       <Route path="Racing"  element={<Racing/>}/>
       <Route path="Promotion"  element={<Promotion/>}/>
       <Route path="VIP"  element={<VipPage/>}/>
-      <Route path="AffiliateProgram"  element={<AffiliateProgram/>}/>
+      <Route path="faq"  element={<Faq/>}/>
+      <Route path="PrivacyPolicy"  element={<PrivacyPolicy/>}/>
+      <Route path="terms-and-conditions"  element={<TermConditions/>}/>
+      <Route path="Disconnection-Policy"  element={<DisconnectionPolicy/>}/>
+      <Route path="Responsible-Gambling"  element={<Responsible/>}/>
+      <Route path="InfoAndPayment"  element={<InfoAndPayment/>}/>
+      <Route path="Account"  element={<Account/>}/>
+      <Route path="ChangePassword"  element={<ChangePassword/>}/>
+      <Route path="MobileLeftSideBar"  element={<MobileLeftSideBar/>}/>
+      <Route path="Deposit"  element={<Deposit/>}/>
+      <Route path="upi"  element={<Upi/>}/>
+      <Route path="usdt"  element={<Usdt/>}/>
+      <Route path="InfoMobileHeader"  element={<InfoMobileHeader/>}/>
+      <Route path="contact-us"  element={<ContactUs/>}/>
+      <Route path="Brand-Ambassador"  element={<Ambassador/>}/>
+      <Route path="BankAccountForm"  element={<BankAccountForm/>}/>
+      <Route path="WithDraw"  element={<WithDraw/>}/>
+      <Route path="Records"  element={<Records/>}/>
     </Routes>
   )
 }

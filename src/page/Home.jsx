@@ -7,6 +7,7 @@ import Carousel from "../component/Carousel";
 import Header from "../component/Header";
 import HomeCards from "../component/HomeCards";
 import HomeTabs from "../component/HomeTabs";
+import MobileHeader from "../component/MobileHeader";
 
 const Home = () => {
   const {
@@ -23,6 +24,7 @@ const Home = () => {
       </div>  
       <Carousel></Carousel>
       <HomeTabs></HomeTabs>
+      <MobileHeader></MobileHeader>
       <HomeCards/>
     </div>
   );

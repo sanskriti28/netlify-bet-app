@@ -8,6 +8,8 @@ import ArcadeCards from "../component/All-Cards/ArcadeCards";
 import ArcadeTabs from "../component/All-Page-Tabs/ArcadeTabs";
 import CockFightTabs from "../component/All-Page-Tabs/CockFightTabs";
 import CockFightCards from "../component/All-Cards/CockFightCards";
+import MobileHeader from "../component/MobileHeader";
+import Carousel from "../component/Carousel";
 
 const CockFight = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,8 +25,15 @@ const CockFight = () => {
 
   return (
     <Box className="main_page">
-      {/* <Carousel></Carousel> */}
-      <Flex style={{ backgroundColor: bgGray, }} className="game-toolbar-wrapper rounded" align="center" justify="space-between" p="5px 5px 5px 15px" h="60px" mb="15px" mt="10px" mx="10px">
+       <Box  className="slider_wrap" display={{base:"block", xl:"none"}}>
+      <Carousel></Carousel>
+      </Box>
+      <Flex style={{ backgroundColor: bgGray, }} className="game-toolbar-wrapper rounded" 
+      align="center" justify="space-between" 
+      p="5px 5px 5px 15px" h="60px" mb="15px" 
+      mt="10px" mx="10px"
+      display={{base:"none", xl:"flex"}}
+      >
         <Flex className="tags-wrapper">
           <ul className="tags-list flex gap-8">
             <li className="active font-bold" style={{ color: secondaryText }}>
@@ -62,7 +71,10 @@ const CockFight = () => {
           </InputGroup>
         </Flex>
       </Flex>
+      <Box className="tabs_wrap" display={{base:"none", xl:"block"}}>
       <CockFightTabs></CockFightTabs>
+      </Box>
+      <MobileHeader></MobileHeader>
       <CockFightCards></CockFightCards>
     </Box>
   );

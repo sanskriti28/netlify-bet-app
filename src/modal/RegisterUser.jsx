@@ -1,124 +1,4 @@
-// import React from 'react';
-// import {
-//     Button,
-//     Modal,
-//     ModalOverlay,
-//     ModalContent,
-//     ModalHeader,
-//     ModalCloseButton,
-//     ModalBody,
-//     ModalFooter,
-//     FormControl,
-//     FormLabel,
-//     Input,
-//     Text,
-//     useDisclosure,
-//     Select
-// } from "@chakra-ui/react";
-// import img1 from "../assets/logo.svg";
-// import { useSelector } from "react-redux";
-// import { FaRegCircleUser } from "react-icons/fa6";
-// import { MdLock } from "react-icons/md";
-// import { FaRegUser } from "react-icons/fa";
-// import { BiPhoneCall } from "react-icons/bi";
-// import { MdOutlineEmail } from "react-icons/md";
-// import { RiCouponLine } from "react-icons/ri";
 
-// function RegisterUser() {
-//     const { isOpen, onOpen, onClose } = useDisclosure();
-
-//     const initialRef = React.useRef(null);
-//     const finalRef = React.useRef(null);
-
-//     const style = {
-//         width: '170px'
-
-//     }
-//     const {
-//         bgColor1,
-//         bgColor2,
-//         bgGray,
-//         bgYellow,
-//         PrimaryText,
-//         secondaryText,
-//         hoverColor,
-//         ClickActiveColor,
-//       } = useSelector((state) => state.theme);
-//     return (
-//         <>
-//             {/* <Button onClick={onOpen}>Open Modal</Button> */}
-//             {/* <Text onClick={onOpen} fontSize="sm" fontWeight="bold" className='cursor-pointer'>Forgot Password</Text> */}
-//             <button onClick={onOpen}  className=" cursor-pointer flex-shrink-0 bg-green-500 hover:bg-green-700 text-white text-base py-1 px-2 rounded focus:outline-none focus:shadow-outline ml-2" type="button">
-//                 Register
-//               </button>
-//             <Modal
-//                 initialFocusRef={initialRef}
-//                 finalFocusRef={finalRef}
-//                 isOpen={isOpen}
-//                 onClose={onClose}
-//             >
-//                 <ModalOverlay />
-//                 <ModalContent>
-//                     <div className='flex justify-center items-center'> <img style={style} src={img1} alt="Logo" /></div>
-
-//                     <ModalHeader>Welcome to best Online Casino!</ModalHeader>
-//                     <ModalCloseButton />
-//                     <ModalBody pb={6}>
-//                         <FormControl >
-//                         <FaRegCircleUser/>
-//                             <Input ref={initialRef} placeholder='Username' />
-//                         </FormControl>
-
-//                         <FormControl mt={4}>
-//                         <MdLock/>
-//                             <Input ref={initialRef} placeholder='Password' />
-//                         </FormControl>
-
-//                         <FormControl mt={4}>
-//                         <MdLock/>
-//                             <Input ref={initialRef} placeholder='Confirm Password' />
-//                         </FormControl>
-
-//                         <FormControl mt={4}>
-//                         <FaRegUser/>
-//                             <Input ref={initialRef} placeholder='Full Name' />
-//                         </FormControl>
-                        
-//                         <FormControl mt={4}>
-//                         <BiPhoneCall/>
-//                             <Input ref={initialRef} placeholder='Mobile Number' />
-//                         </FormControl>
-//                         {/* <FormControl mt={4}>
-//                             <Select placeholder='Select option'>
-//                                 <option value='option1'>Mobile Number</option>
-//                                 <option value='option2'>Email Address</option>
-//                             </Select>
-//                         </FormControl> */}
-//                         <FormControl mt={4}>
-//                         <MdOutlineEmail/>
-//                             <Input placeholder='Email' />
-//                         </FormControl>
-
-//                         <FormControl mt={4}>
-//                         <RiCouponLine/>
-//                             <Input placeholder='Promo Code' />
-//                         </FormControl>
-//                     </ModalBody>
-
-//                     <ModalFooter>
-//                         <Button style={{backgroundColor:bgYellow}}  mr={3} w="500px"> 
-//                             Submit
-//                         </Button>
-
-//                         {/* <Button onClick={onClose}>Cancel</Button> */}
-//                     </ModalFooter>
-//                 </ModalContent>
-//             </Modal>
-//         </>
-//     );
-// }
-
-// export default RegisterUser;
 import React from 'react';
 import {
     Button,
@@ -136,7 +16,8 @@ import {
     useDisclosure,
     Select,
     InputGroup,
-    InputLeftElement
+    InputLeftElement,
+    Box,
 } from "@chakra-ui/react";
 import img1 from "../assets/logo.svg";
 import { useSelector } from "react-redux";
@@ -146,8 +27,10 @@ import { FaRegUser } from "react-icons/fa";
 import { BiPhoneCall } from "react-icons/bi";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiCouponLine } from "react-icons/ri";
+import { useState } from 'react';
+import { FaMinus } from "react-icons/fa6";
 
-function RegisterUser() {
+function RegisterUser({ isLoggedIn, setIsLoggedIn }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const initialRef = React.useRef(null);
@@ -161,17 +44,52 @@ function RegisterUser() {
     const {
         bgYellow,
         redBtn,
+        blackBtn,
+        PrimaryText,
+        whiteText,
       } = useSelector((state) => state.theme);
+
+
     return (
         <>
-            <Button onClick={onOpen} bg={redBtn} _hover={{ bg: redBtn }} color="white" 
-            fontSize={{base:".9rem",xl:"16px"}}
-            borderRadius={{base:"25px",xl:"5px"}}
-            minW={{base:"85px",xl:"140px"}} 
-            height={{base:"40px",xl:"50px"}}   
-            style={{margin:'5px',}}>
-                Register
-            </Button>
+        {isLoggedIn ?
+           <Box display="flex">
+            <Button onClick={onOpen} bg={{base:blackBtn, xl:redBtn}} _hover={{ bg:{base:blackBtn, xl:redBtn} }} 
+                color={{base:whiteText}} 
+                fontSize={{base:".9rem",xl:"16px"}}
+                borderRadius={{base:"25px",xl:"5px"}}
+                minW={{base:"85px",xl:"140px"}} 
+                height={{base:"40px",xl:"50px"}}   
+                margin={{base:"5px 0 5px 5px",xl:"5px"}}
+                display={{base:"none", xl:"block"}}
+                
+            >
+                {isLoggedIn ? 'Withdraw' : 'Register'}
+                </Button>
+                <Button backgroundColor={blackBtn} 
+                color={whiteText} 
+                borderRadius="50%"
+                width="40px"
+                height="40px"
+                display={{base:"flex", xl:"none"}}
+                padding="8px"
+                >
+                  <FaMinus size={24}/>
+                </Button>
+           </Box>
+           :
+           <Button onClick={onOpen} bg={{base:blackBtn, xl:redBtn}} _hover={{ bg:{base:blackBtn, xl:redBtn} }} 
+                color={{base:whiteText}} 
+                fontSize={{base:".9rem",xl:"16px"}}
+                borderRadius={{base:"25px",xl:"5px"}}
+                minW={{base:"85px",xl:"140px"}} 
+                height={{base:"40px",xl:"50px"}}   
+                margin={{base:"5px 0 5px 5px",xl:"5px"}}
+                
+            >
+                {isLoggedIn ? 'Withdraw' : 'Register'}
+                </Button>
+        }
             <Modal
                 initialFocusRef={initialRef}
                 finalFocusRef={finalRef}

@@ -5,6 +5,7 @@ import bangladesh from "../assets/images/flags/bangladesh.svg";
 import en from "../assets/images/flags/en.svg";
 import hi from "../assets/images/flags/hi.svg";
 import { useSelector } from "react-redux";
+import { useMediaQuery } from '@chakra-ui/react';
 import {
     Button,
     Menu,
@@ -23,7 +24,7 @@ import {
     Text
 } from "@chakra-ui/react";
 
-const ChangeLanguage = () => {
+const ChangeLanguage = ({ isLoggedIn, setIsLoggedIn }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     const initialRef = React.useRef(null);
@@ -49,15 +50,56 @@ const ChangeLanguage = () => {
         justifyContent:'center',
         
     }
+    const [isXl] = useMediaQuery("(min-width: 1280px)");
     return (
         <>
-            <Button style={{ height: '50px', width: '85px',backgroundColor:bgGray, marginRight:'5px' }} p="0" onClick={onOpen}>
-                <Menu>
-                    <MenuButton as={Button} rightIcon={<FaCaretDown />} style={{ height: '50px' }} p="0">
-                        <img src={hindi} alt='Hindi' style={{ borderRadius: '50%', height: '35px', width: '35px', objectFit: 'cover', }} />
-                    </MenuButton>
-                </Menu>
-            </Button>
+        {isLoggedIn? 
+         <Button 
+         marginRight={{ base:"0", xl:'5px'}}
+         bg={{ base:"transparent", xl:bgGray}}
+         width={{ base:"auto", xl:"85px"}}
+         height={{ base:"auto", xl:"50px"}}
+         padding={{ base:"0 5px", xl:"0"}}
+         display={{base:"none", xl:"block"}}
+         onClick={onOpen}>
+             <Menu >
+                 <MenuButton as={Button} rightIcon={isXl ? <FaCaretDown /> : undefined} 
+                 height={{ base:"40px", xl:"50px"}}
+                 borderRadius={{ base:"50%", xl:"0"}}
+                 padding={{ base:"0 5px", xl:"0"}}
+                 >
+                     <Image src={hindi} alt='Hindi'
+                     height={{ base:"30px", xl:"40px"}}
+                     width={{ base:"30px", xl:"40px"}}
+                     style={{ borderRadius: '50%', objectFit: 'cover', }} 
+                     />
+                 </MenuButton>
+             </Menu>
+         </Button>
+         :
+         <Button 
+         marginRight={{ base:"0", xl:'5px'}}
+         bg={{ base:"transparent", xl:bgGray}}
+         width={{ base:"auto", xl:"85px"}}
+         height={{ base:"auto", xl:"50px"}}
+         padding={{ base:"0 5px", xl:"0"}}
+         onClick={onOpen}>
+             <Menu >
+                 <MenuButton as={Button} rightIcon={isXl ? <FaCaretDown /> : undefined} 
+                 height={{ base:"40px", xl:"50px"}}
+                 borderRadius={{ base:"50%", xl:"0"}}
+                 padding={{ base:"0 5px", xl:"0"}}
+                 >
+                     <Image src={hindi} alt='Hindi'
+                     height={{ base:"30px", xl:"40px"}}
+                     width={{ base:"30px", xl:"40px"}}
+                     style={{ borderRadius: '50%', objectFit: 'cover', }} 
+                     />
+                 </MenuButton>
+             </Menu>
+         </Button>
+        
+    }
             <Modal
                 initialFocusRef={initialRef}
                 finalFocusRef={finalRef}

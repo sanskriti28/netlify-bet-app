@@ -90,7 +90,7 @@ const Carousel = () => {
       </div>
      <div className='news-announcement flex justify-center items-center' style={{backgroundColor:bgGray, paddingTop: '5px', paddingBottom: '5px',}}>
      <ImBullhorn style={{margin: '0 10px'}} size={20}/>
-      <marquee style={{inlineStyles,lineHeight: '10px', padding: '0 0 10px',}} className="font-bold">
+      <marquee style={{inlineStyles,lineHeight: '10px', padding: '0 0 10px',}} className="font-bold:xl">
         <span style={inlineStyles}>
           <span style={{color:secondaryText}} className='news-title'>Backup site link :</span>
           <span className='news-text'>In case of trouble visiting www.betvisa.com, please visit www.b8visa.com, which is our backup URL.</span>

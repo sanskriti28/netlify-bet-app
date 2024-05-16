@@ -44,7 +44,7 @@ function SlotsCards() {
 
     return (
         <>
-            <SimpleGrid columns={{ sm: 2, md: 3, lg: 6 }} spacing="10px" p="3" >
+            <SimpleGrid columns={{ base:2, sm: 3, md: 4, lg: 6 }} spacing="10px" p="3" >
                 {images.map((img, index) => (
                     <Box key={index} rounded="5px" overflow="hidden" position="relative" display="flex" maxHeight='144px'>
                         <img src={img} alt={`Logo ${index + 1}`} />

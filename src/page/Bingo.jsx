@@ -8,6 +8,9 @@ import { MdOutlineSearch } from "react-icons/md";
 import { Flex, Text, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import BingoTabs from "../component/All-Page-Tabs/BingoTabs";
 import BingoCards from "../component/All-Cards/BingoCards";
+import MobileHeader from "../component/MobileHeader";
+import Carousel from "../component/Carousel";
+
 
 const Bingo = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -23,8 +26,15 @@ const Bingo = () => {
 
   return (
     <Box className="main_page">
-      {/* <Carousel></Carousel> */}
-      <Flex style={{ backgroundColor: bgGray, }} className="game-toolbar-wrapper rounded" align="center" justify="space-between" p="5px 5px 5px 15px" h="60px" mb="15px" mt="10px" mx="10px">
+      <Box  className="slider_wrap" display={{base:"block", xl:"none"}}>
+      <Carousel></Carousel>
+      </Box>
+      <Flex style={{ backgroundColor: bgGray, }} className="game-toolbar-wrapper rounded" 
+      align="center" justify="space-between" 
+      p="5px 5px 5px 15px" h="60px" 
+      mb="15px" mt="10px" mx="10px"
+      display={{base:"none", xl:"flex"}}
+      >
         <Flex className="tags-wrapper">
           <ul className="tags-list flex gap-8">
             <li className="active font-bold" style={{ color: secondaryText }}>
@@ -53,7 +63,10 @@ const Bingo = () => {
           </InputGroup>
         </Flex>
       </Flex>
+      <Box className="tabs_wrap" display={{base:"none", xl:"block"}}>
       <BingoTabs></BingoTabs>
+      </Box>
+      <MobileHeader></MobileHeader>
       <BingoCards></BingoCards>
     </Box>
   );

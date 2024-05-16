@@ -19,13 +19,19 @@ function App() {
      ClickActiveColor
   } = useSelector((state) => state.theme);
 
+
+  const [userName, setUserName] = useState("")
+  const [userPassword, setUserPassword] = useState("")
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
+
   return (
    <div>
    
-    <Header></Header>
-    <AllRoute></AllRoute>
-    <Footer></Footer>
-    <MobileFooter></MobileFooter>
+    <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Header>
+    <AllRoute isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></AllRoute>
+    <Footer isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Footer>
+    <MobileFooter isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></MobileFooter>
    </div>
   )
 }

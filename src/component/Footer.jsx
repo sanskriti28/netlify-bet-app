@@ -54,9 +54,7 @@ const Footer = () => {
   }
   return (
     <Box className='footer-main' >
-      <Box display={{ base: "block", xl: "none" }}>
-      <img src={ambassador} alt="ambassador" style={{margin:'0 auto'}} />
-      </Box>
+     
       <Box display="flex" flexDirection={{ base: "column", xl: "column" }} p={{base: '25px 10px 90px',xl: '10px',}} bg={{ base: bgGray, xl: bgColor1 }}>
         <Box display="flex" flexDirection={{ base: "column", xl: "row" }} justifyContent="space-between" p="3" px="10px" py="50px">
           <Box className="about-wrapper" w={{ base: "100%", xl: "45%" }} mr={{ base: 0, md: "4" }} >

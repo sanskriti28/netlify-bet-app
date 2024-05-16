@@ -43,7 +43,7 @@ function HomeTabs() {
     return (
         <>
             <div className="home-tabs-section">
-                <Box className="p-3" overflowX="scroll"  css={{"&::-webkit-scrollbar": { display: "none", },}}>
+                <Box className="p-3" overflowX="scroll"  css={{"&::-webkit-scrollbar": { display: "none", },}} display={{base:"none", xl:"block"}}>
                     <HStack spacing='15px' className="text-base font-bold">
                     <Box style={{ backgroundColor: bgGray, ...TabsStyle }} width={{base:"auto", xl:"100px"}} className="p-3 home-tab rounded text-center" >
                         <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">

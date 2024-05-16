@@ -16,12 +16,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import RightSidebar from "../modal/RightSidebar";
 import Login from "../page/Login";
 import img1 from "../assets/logo.svg";
-import bingo from "../assets/images/Header/bingo.png";
-import slots from "../assets/images/Header/slots.png";
-import fishing from "../assets/images/Header/fishing.png";
-import lottery from "../assets/images/Header/lottery.png";
-import cock from "../assets/images/Header/cock.png";
-import horse from "../assets/images/Header/horse.png";
+import MobileLeftSideBar from "../modal/MobileLeftSideBar";
 
 import {
     Menu,
@@ -39,7 +34,7 @@ import {
 import ChangeLanguage from "../modal/ChangeLanguage";
 
 
-function Header() {
+function Header({ isLoggedIn, setIsLoggedIn}) {
     const {
         bgColor1,
         bgGray,
@@ -56,22 +51,30 @@ function Header() {
     const isActive = (path) => {
         return location.pathname === path;
     };
+
+    //Authentication
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
     return (
         <>
             <div style={{ position: 'fixed', top: '0', zIndex: '999', backgroundColor: bgColor1, width: '100%', }}>
                 <div style={{ paddingRight: '10px', }} className='flex justify-between items-center'>
+                    <Box className="" display={{base:"block", xl:"none"}}>
+                        <MobileLeftSideBar maxW={{base:"100px",xl:"170px"}} height={{base:"22px",xl:"42px"}} />
+                    </Box>
                     <div className="">
                         <Image maxW={{base:"100px",xl:"170px"}} height={{base:"22px",xl:"42px"}} src={img1} alt="Logo" />
                     </div>
-                    <Box className="w-full flex justify-end items-center" height={{base:"55px",xl:"85px"}} style={{ gap: '5px' }}>
-                        <Login></Login>
-                        <ChangeLanguage></ChangeLanguage>
-                        <RightSidebar></RightSidebar>
+                    <Box className="w-full flex justify-end items-center" height={{base:"55px",xl:"85px"}} 
+                    gap={{base:"0",xl:"5px"}} 
+                    >
+                        <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Login>
+                        <ChangeLanguage isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></ChangeLanguage>
+                        <RightSidebar display={{base:"none", xl:"block"}}></RightSidebar>
                     </Box>
                 </div>
-                <Box style={{ backgroundColor: bgGray, gap: '15px', 'msOverflowStyle': 'none', 'scrollbarWidth': 'none', height: "50px,", }} 
-                className='sub_Header flex justify-between overflow-auto whitespace-nowrap'
-                display={{base:"none",xl:"block"}}>
+                <Box style={{ backgroundColor: bgGray, gap: '8px', 'msOverflowStyle': 'none', 'scrollbarWidth': 'none', height: "50px,", }} 
+                className='sub_Header justify-between overflow-auto whitespace-nowrap'
+                display={{base:"none",xl:"flex"}}>
                     <Menu className="flex items-center">
                         <MenuButton
                             className={`text-base font-bold text-uppercase p-3 inline-block ${isActive('/') ? 'active-menu' : ''}`}

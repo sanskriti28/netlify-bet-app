@@ -40,11 +40,19 @@ a:hover{
 }
 /* Header CSS */
 
-.home-tabs-section .home-tab:hover{
+/* .home-tabs-section .home-tab:hover{
   background-color: #fbdf13 !important;
   transition: all .2s;
+} */
+.dob_field input{
+  background-color: #f2f2f2;
+  height: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0 10px;
+  border-radius: 5px;
+  width: 100%;
 }
-
 @media screen and (min-width: 1024px) {
   .bg{
    background: url('./assets/bajiviadmin.jpeg');
@@ -76,11 +84,93 @@ a:hover{
 .home-tabs-section.all-tabs .active{
   border: 2px solid #fbdf13;
 }
+.home-tab.chakra-tabs__tab{
+  font-weight: 700;
+}
+.home-tab.chakra-tabs__tab[aria-selected=true],
+.home-tabs-section button[aria-selected=true]{
+  border: 2px solid #fbdf13;
+  color: #000;
+  border-radius: 5px;
+}
+
+/* Mobile Menu */
+.sub_Header_mobile a span{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.sub_Header_mobile a.active{
+  font-weight: 700;
+}
+.sub_Header_mobile a.active svg{
+  background-color: #fbdf13 !important;
+}
+/* Mobile Menu */
+/* Footer Mobile Menu */
+.footer-tab-wrapper ul li a p{
+  font-size: 14px !important;
+  line-height: normal;
+}
+.footer-tab-wrapper ul li a svg path{
+  fill: none;
+  stroke: #000;
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
+}
+.footer-tab-wrapper ul li a.active svg path,
+.footer-tab-wrapper ul li a.active p{
+  fill:#000;
+  font-weight: 700;
+}
+/* Footer Mobile Menu */
+
+
+/* INbox Bell */
+.indox_Icon_wr {
+  position: relative;
+}
+
+.indox_Icon_wr::before {
+    content: "";
+    display: block;
+    opacity: 1;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    background-color: #ec1c2b;
+}
+/* INbox Bell */
+
+.level_wrap .prgoress_star{
+  display: block;
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid #d9dee4;
+  background-color: #f2f2f2;
+  top: -3px;
+}
+.infoPayment_sideBar .infoTabs button > a.active-menu p{
+  color: #fbdf13 !important;
+}
 
 /* 1280 */
 @media screen and (max-width:1280px){
+  .whteBg_xl{
+    background-color: #f2f2f2 !important;
+  }
+  input.whteBg_xl{
+    border-radius: 25px !important;
+  }
   .main_page{
-    padding-top: 55px;
+    padding-top: 55px !important;
   }
   .main_page .home-tabs-section .home-tab{
       background-color: transparent !important;
@@ -101,5 +191,68 @@ a:hover{
   .main_page .home-tabs-section .home-tab a{
     font-size: 14px;
     font-weight: 300;
+  }
+  .news-announcement{
+    margin: 5px 10px 10px;
+    border-radius: 25px;
+  }
+  .news-announcement marquee{
+   padding: 3px 0 !important;
+   line-height: 30px !important;
+   font-size: 12.5px !important;
+  }
+  .news-announcement marquee .news-text{
+   line-height: 30px !important;
+   font-size: 12.5px !important;
+  }
+  .infoPayment_sideBar .infoTabs button{
+    background-color: #f2f2f2;
+  }
+  .infoPayment_sideBar .infoTabs button > a{
+    flex-direction: column;
+    padding: 10px 6px 6px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 5px !important;
+    gap: 2px !important;
+  }
+  .home-tab.chakra-tabs__tab[aria-selected=true],
+  .mainTabs_header button[aria-selected=true] .home-tab{
+    border: 2px solid #fbdf13;
+    color: #000;
+    background-color:#fbdf13 !important ;
+  }
+  .mainTabs_wr {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .mainTabs_wr button.chakra-tabs__tab[aria-selected=true]{
+    background-color: #fbdf13;
+  }
+  .mainTabs_wr button{
+      width: 100%;
+      border:0;
+      border-radius: 10px;
+  }
+  .vip_page_wrap .mobileCards button{
+    font-weight: 700;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #000;
+  }
+  .vip_page_wrap .mobileCards button[aria-selected=true]{
+    border: 1px solid #fbdf13;
+    background-color: #ffffff !important;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .vip_page_wrap .mobileCards .tabs_list_wr{
+    flex-wrap: wrap;
+  }
+  .vip_page_wrap .mobileCards button{
+    width: calc(33.33333% - 7px)!important;
+    min-width: unset;
   }
 }
