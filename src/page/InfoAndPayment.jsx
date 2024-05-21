@@ -13,6 +13,7 @@ import {
     Flex,
     Image
 } from "@chakra-ui/react";
+import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/react';
 import {
     HStack,
     Center,
@@ -79,7 +80,7 @@ const InfoAndPayment = () => {
                                     </Link>
                                 </Button>
                                 <Button gap="15px" height="auto" minW={{ base: "85px", xl: "100%" }} bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">
-                                    <Link to="/BankAccountForm" className={`${isActive('/BankAccountForm') ? 'active-menu' : ''}`}
+                                    <Link to="/Bank" className={`${isActive('/Bank') ? 'active-menu' : ''}`}
                                         style={{ display: "flex", gap: "15px", backgroundColor: bgGray }}
                                     >
                                         <CiBank fontSize="28px" />
@@ -113,24 +114,24 @@ const InfoAndPayment = () => {
                             </Flex>
                             <Flex padding="15px" gap="10px" flexDirection={{ base: "row", xl: "column" }} bg={{ base: bgColor1, xl: bgGray }} style={{ textAlign: 'left' }} mt={4} p="20px 15px">
                                 <Box display='flex' gap="15px" bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start" marginBottom="20px">
-                                    <Image src={Bronze} alt="Bronze" boxSize="35px"/>
-                                    <Text style={{fontWeight:"bold"}} flexShrink={0}>VIP Bronze</Text>
+                                    <Image src={Bronze} alt="Bronze" boxSize="35px" />
+                                    <Text style={{ fontWeight: "bold" }} flexShrink={0}>VIP Bronze</Text>
                                 </Box>
                                 <Box position="relative" className="level_wrap">
-                                    <Progress value={0} style={{ backgroundColor: progressBar, height:"8px", width:"100%" }} colorScheme="primary" height="4px" mb="2" />
+                                    <Progress value={0} style={{ backgroundColor: progressBar, height: "8px", width: "100%" }} colorScheme="primary" height="4px" mb="2" />
                                     <Flex align="center" width="100%" flexGrow="100%">
                                         <Box className="first-step" width="100%">
-                                            <Box  className="prgoress_star box-outline default-center" 
-                                            width="35px" height="35px"
+                                            <Box className="prgoress_star box-outline default-center"
+                                                width="35px" height="35px"
                                             ></Box>
-                                            <Text as="span" style={{fontSize:"14px"}} marginTop="10px" display="inline-block">
+                                            <Text as="span" style={{ fontSize: "14px" }} marginTop="10px" display="inline-block">
                                                 <span >Bet Amount:</span>
-                                                <Text as="span" className="amount font-bold" style={{color:secondaryText}}>0/1,000,000</Text>
+                                                <Text as="span" className="amount font-bold" style={{ color: secondaryText }}>0/1,000,000</Text>
                                             </Text>
                                         </Box>
                                         <Box className="step" zIndex="1" right="-15px" position="absolute" top="-15px">
-                                            <Image src={Bronze} alt="Bronze" boxSize="50px" mr={2}  width="35px" height="35px"/>
-                                            <Text style={{fontSize:"14px"}} as="span">Silver</Text>
+                                            <Image src={Bronze} alt="Bronze" boxSize="50px" mr={2} width="35px" height="35px" />
+                                            <Text style={{ fontSize: "14px" }} as="span">Silver</Text>
                                         </Box>
                                     </Flex>
                                 </Box>
@@ -170,8 +171,7 @@ const InfoAndPayment = () => {
                                     </Link>
                                 </Button>
                             </Flex>
-
-                            <Flex gap="10px" flexDirection={{ base: "row", xl: "column" }} bg={{ base: bgColor1, xl: bgGray }} style={{ textAlign: 'left' }} mt={4} py="20px">
+                            {/* <Flex gap="10px" flexDirection={{ base: "row", xl: "column" }} bg={{ base: bgColor1, xl: bgGray }} style={{ textAlign: 'left' }} mt={4} py="20px">
                                 <Button gap="15px" bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">
                                     <Link to="/Terms-Conditions" className={`${isActive('/Terms-Conditions') ? 'active-menu' : ''}`}
                                         style={{ display: "flex", gap: "15px", backgroundColor: bgGray }}
@@ -220,11 +220,93 @@ const InfoAndPayment = () => {
                                         <Text>Contact US</Text>
                                     </Link>
                                 </Button>
-                            </Flex>
+                            </Flex> */}
+                            <Accordion allowToggle gap="10px" flexDirection={{ base: "row", xl: "column" }} bg={{ base: bgColor1, xl: bgGray }} style={{ textAlign: 'left' }} mt={4} py="20px">
+                                <AccordionItem>
+                                    <AccordionButton>
+                                        <Box as='span' flex='1' textAlign='left'>
+                                            ... More
+                                        </Box>
+                                        <AccordionIcon />
+                                    </AccordionButton>
+                                    <AccordionPanel>
+                                        <Button gap="15px" bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">
+                                            <Link to="/Terms-Conditions" className={`${isActive('/Terms-Conditions') ? 'active-menu' : ''}`}
+                                                style={{ display: "flex", gap: "15px", backgroundColor: bgGray }}
+                                            >
+                                                <FaHandsHoldingCircle fontSize="28px" />
+                                                <Text>Terms & Conditions</Text>
+                                            </Link>
+                                        </Button>
+                                    </AccordionPanel>
+                                    <AccordionPanel>
+                                        <Button gap="15px" bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">
+                                            <Link to="/faq" className={`${isActive('/faq') ? 'active-menu' : ''}`}
+                                                style={{ display: "flex", gap: "15px", backgroundColor: bgGray }}
+                                            >
+                                                <LiaCrownSolid fontSize="28px" />
+                                                <Text>FAQ</Text>
+                                            </Link>
+                                        </Button>
+                                    </AccordionPanel>
+                                    <AccordionPanel>
+                                        <Button gap="15px" bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">
+                                            <Link to="/Privacy-Policy" className={`${isActive('/Privacy-Policy') ? 'active-menu' : ''}`}
+                                                style={{ display: "flex", gap: "15px", backgroundColor: bgGray }}
+                                            >
+                                                <PiSpinnerBallFill fontSize="28px" />
+                                                <Text>Privacy Policy</Text>
+                                            </Link>
+                                        </Button>
+                                    </AccordionPanel>
+                                    <AccordionPanel >
+                                        <Button gap="15px" bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">
+                                            <Link to="/DisconnectionPolicy" className={`${isActive('/DisconnectionPolicy') ? 'active-menu' : ''}`}
+                                                style={{ display: "flex", gap: "15px", backgroundColor: bgGray }}
+                                            >
+                                                <FaUsers fontSize="28px" />
+                                                <Text>Disconnection Policy</Text>
+                                            </Link>
+                                        </Button>
+                                    </AccordionPanel>
+                                    <AccordionPanel >
+                                        <Button gap="15px" bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">
+                                            <Link to="/Responsible" className={`${isActive('/Responsible') ? 'active-menu' : ''}`}
+                                                style={{ display: "flex", gap: "15px", backgroundColor: bgGray }}
+                                            >
+                                                <FaUsers fontSize="28px" />
+                                                <Text>Responsible Gambling</Text>
+                                            </Link>
+                                        </Button>
+                                    </AccordionPanel>
+                                    <AccordionPanel >
+                                        <Button bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">
+                                            <Link to="/Contact-US" className={`${isActive('/Contact-US') ? 'active-menu' : ''}`}
+                                                style={{ display: "flex", gap: "15px", backgroundColor: bgGray }}
+                                            >
+                                                <FaUsers fontSize="28px" />
+                                                <Text>Contact US</Text>
+                                            </Link>
+                                        </Button>
+                                    </AccordionPanel>
+                                </AccordionItem>
+                            </Accordion>
+                            <Button
+                                bg={{ base: "#ec1c2b"}}
+                                _hover={{ bg: { base: "#ec1c2b", xl: "greenBtn" } }}
+                                color={{ base: "ec1c2b", xl: "whiteText" }}
+                                fontSize={{ base: ".9rem", xl: "16px" }}
+                                borderRadius={{ base: "25px", xl: "5px" }}
+                                minW={{ base: "140px;", xl: "140px" }}
+                                height={{ base: "40px", xl: "50px" }}
+                                margin={{ base: "5px 0 5px", xl: "5px" }}
+                                display={{ base: "none", xl: "block" }}
+                            >
+                                Logout
+                            </Button>
+
                         </Box>
-
                     </Box>
-
                 </Flex>
             </Box>
         </Box>

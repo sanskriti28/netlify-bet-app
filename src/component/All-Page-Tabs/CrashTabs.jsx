@@ -18,11 +18,26 @@ import img5 from "../../assets/images/crash/10005.png";
 import img6 from "../../assets/images/crash/10006.png";
 import img7 from "../../assets/images/crash/10007.png";
 
+import CrashBgGaming from "../Crash/CrashBgGaming";
+import CrashEvo from "../Crash/CrashEvo";
+import CrashJili from "../Crash/CrashJili";
+import CrashKa from "../Crash/CrashKa";
+import CrashPp from "../Crash/CrashPp";
+import CrashSaba from "../Crash/CrashSaba";
+import CrashSpb from "../Crash/CrashSpb";
+import CrashT1Games from "../Crash/CrashT1Games";
+import CrashCards from "../Crash/CrashCards";
 
 import {
     Box,
     HStack,
     Center,
+    Tabs,
+    TabList,
+    Tab,
+    TabIndicator,
+    TabPanels,
+    TabPanel,
 } from '@chakra-ui/react'
 
 
@@ -37,15 +52,18 @@ function CrashTabs() {
     } = useSelector((state) => state.theme);
 
     const { t, i18n } = useTranslation();
-    const TabsStyle={
-        minWidth:'100px',
-        height:'100px',
-        width:'auto',
+    const TabsStyle = {
+        minWidth: '100px',
+        height: '100px',
+        width: 'auto',
         borderRadius: '5px',
+        fontWeight:"700",
+        textTransform: 'uppercase',
+        border:`2px solid ${bgGray} `,
     }
     return (
         <>
-          <div className="home-tabs-section all-tabs">
+          {/* <div className="home-tabs-section all-tabs">
                 <Box className="p-3" overflowX="scroll"  css={{"&::-webkit-scrollbar": { display: "none", },}}>
                     <HStack spacing='15px' className="text-base font-bold">
                     <Box style={{ backgroundColor: bgGray, ...TabsStyle }} className="active p-3 home-tab rounded text-center" >
@@ -97,7 +115,83 @@ function CrashTabs() {
                         </Box>
                     </HStack>
                 </Box>
-            </div>
+            </div> */}
+             <Tabs className="home-tabs-section all-tabs all_pages_tabsWr" position='relative' variant='unstyled' px="10px">
+            <TabList gap="10px">
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    {t(`All`)}
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img1} alt="9wickets" size={40} style={{ width: "40px" }} />
+                        {t(`evo`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img2} alt="we" size={40} style={{ width: "40px" }} />
+                        {t(`sey`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img3} alt="bti" size={40} style={{ width: "40px" }} />
+                        {t(`bbin`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img4} alt="cmd" size={40} style={{ width: "40px" }} />
+                        {t(`BetGames`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img5} alt="pinnancle" size={40} style={{ width: "40px" }} />
+                        {t(`CQ9`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img6} alt="saba" size={40} style={{ width: "40px" }} />
+                        {t(`Dg`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img7} alt="sbo" size={40} style={{ width: "40px" }} />
+                        {t(`Ezugi`)}
+                    </Center>
+                </Tab>
+            </TabList>
+            <TabIndicator mt='-1.5px' height='2px' borderRadius='1px' />
+            <TabPanels>
+                <TabPanel>
+                <CrashCards></CrashCards>
+                </TabPanel>
+                <TabPanel>
+                   <CrashEvo></CrashEvo>
+                </TabPanel>
+                <TabPanel>
+                    <CrashSpb></CrashSpb>
+                </TabPanel>
+                <TabPanel>
+                    <CrashJili></CrashJili>
+                </TabPanel>
+                <TabPanel>
+                    <CrashBgGaming></CrashBgGaming>
+                </TabPanel>
+                <TabPanel>
+                    <CrashKa></CrashKa>
+                </TabPanel>
+                <TabPanel>
+                    <CrashPp></CrashPp>
+                </TabPanel>
+                <TabPanel>
+                    <CrashT1Games></CrashT1Games>
+                </TabPanel>
+            </TabPanels>
+        </Tabs >
         </>
     )
 }

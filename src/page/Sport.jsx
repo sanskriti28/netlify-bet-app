@@ -21,28 +21,28 @@ const Sport = () => {
     secondaryText,
     hoverColor,
     ClickActiveColor,
-} = useSelector((state) => state.theme);
+  } = useSelector((state) => state.theme);
 
   return (
     <Box className="main_page">
-       <Box  className="slider_wrap" display={{base:"block", xl:"none"}}>
-      <Carousel></Carousel>
+      <Box className="slider_wrap" display={{ base: "block", xl: "none" }}>
+        <Carousel></Carousel>
       </Box>
-      <Flex style={{ backgroundColor: bgGray,}} className="game-toolbar-wrapper rounded" 
-      align="center" justify="space-between" 
-      p="5px 5px 5px 15px" h="60px" 
-      mb="15px" mt="10px" mx="10px"
-      display={{base:"none", xl:"flex"}}
+      <Flex style={{ backgroundColor: bgGray, }} className="game-toolbar-wrapper rounded"
+        align="center" justify="space-between"
+        p="5px 5px 5px 15px" h="60px"
+        mb="15px" mt="10px" mx="10px"
+        display={{ base: "none", xl: "flex" }}
       >
         <Flex className="tags-wrapper">
           <ul className="tags-list">
-            <li className="active font-bold" style={{color:secondaryText}}>
+            <li className="active font-bold" style={{ color: secondaryText }}>
               All
             </li>
           </ul>
         </Flex>
         <Flex className="search-wrapper">
-          <InputGroup className="custom-input-wrapper search-input" h= '50px' w="266px">
+          <InputGroup className="custom-input-wrapper search-input" h='50px' w="266px">
             <InputLeftElement h="100%"
               pointerEvents="none"
               children={<MdOutlineSearch size={28} />}
@@ -50,19 +50,19 @@ const Sport = () => {
             <Input
               type="text"
               placeholder="Search"
-              value={searchQuery} style={{ backgroundColor: bgColor1,}} h="100%"
+              value={searchQuery} style={{ backgroundColor: bgColor1, }} h="100%"
               onChange={(e) => setSearchQuery(e.target.value)}
             />
           </InputGroup>
         </Flex>
       </Flex>
-      <Box className="tabs_wrap" display={{base:"none", xl:"block"}}>
-      <SportTabs></SportTabs>
+      <Box className="tabs_wrap" display={{ base: "none", xl: "block" }}>
+        <SportTabs></SportTabs>
       </Box>
       <MobileHeader></MobileHeader>
       <SportCards></SportCards>
       <Box display={{ base: "block", xl: "none" }}>
-      <img src={ambassador} alt="ambassador" style={{margin:'0 auto'}} />
+        <img src={ambassador} alt="ambassador" style={{ margin: '0 auto' }} />
       </Box>
     </Box>
   );

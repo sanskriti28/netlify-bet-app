@@ -1,15 +1,19 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-
-import img2 from '../../assets/images/casino/10001.png'
-import img1 from '../../assets/images/casino/10001.png'
-import img3 from '../../assets/images/casino/10005.jpeg'
-import img4 from '../../assets/images/casino/10006.png'
-import img5 from '../../assets/images/casino/10007.png'
-import img6 from '../../assets/images/casino/10008.png'
-import img7 from '../../assets/images/casino/10009.jpeg'
-import img8 from '../../assets/images/casino/10010.jpeg'    
-import img9 from '../../assets/images/casino/10011.png'
+import img1 from "../../assets/images/crash/10009.png";
+import img2 from "../../assets/images/crash/10010.png";
+import img3 from "../../assets/images/crash/10011.png";
+import img4 from "../../assets/images/crash/10012.png";
+import img5 from "../../assets/images/crash/10013.png";
+import img6 from "../../assets/images/crash/10014.png";
+import img7 from "../../assets/images/crash/10015.png";
+import img8 from "../../assets/images/crash/10016.jpeg";
+import img9 from "../../assets/images/crash/10017.png";
+import img10 from "../../assets/images/crash/10018.png";
+import img11 from "../../assets/images/crash/10019.png";
+import img12 from "../../assets/images/crash/10020.jpeg";
+import img13 from "../../assets/images/crash/10021.png";
+import img14 from "../../assets/images/crash/10022.png";
 
 import { FcLike } from "react-icons/fc";
 
@@ -19,8 +23,8 @@ import { SimpleGrid, Box } from '@chakra-ui/react';
 
 
 
-function CasinoCards() {
-    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
+function BingoJdb() {
+    const images = [img1, img2, img3,  img8, img9,img10,img11,img12,img13,img14];
     const {
         bgGray,
     } = useSelector((state) => state.theme);
@@ -56,4 +60,4 @@ function CasinoCards() {
 }
 
 
-export default CasinoCards
+export default BingoJdb;

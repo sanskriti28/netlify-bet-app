@@ -7,7 +7,7 @@ import SportCards from "../component/sport/SportCards";
 import { MdOutlineSearch } from "react-icons/md";
 import { Flex, Text, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import CrashTabs from "../component/All-Page-Tabs/CrashTabs";
-import CrashCards from "../component/All-Cards/CrashCards";
+import CrashCards from "../component/Crash/CrashCards";
 import MobileHeader from "../component/MobileHeader";
 import Carousel from "../component/Carousel";
 

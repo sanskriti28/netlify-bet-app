@@ -7,7 +7,7 @@ import { MdOutlineSearch } from "react-icons/md";
 import { Flex, Text, Input, InputGroup, InputLeftElement,Box } from "@chakra-ui/react";
 import SportTabs from "../component/All-Page-Tabs/SportTabs";
 import CasinoTabs from "../component/All-Page-Tabs/CasinoTabs";
-import CasinoCards from "../component/All-Cards/CasinoCards";
+import CasinoCards from "../component/Casino/CasinoCards";
 import MobileHeader from "../component/MobileHeader";
 import Carousel from "../component/Carousel";
 

@@ -10,7 +10,8 @@ import {
 } from '@chakra-ui/react';
 import { useSelector } from "react-redux";
 import InfoAndPayment from "./InfoAndPayment";
-import BankTab from "../component/All-Page-Tabs/BankTab";
+import BankTab from '../component/All-Page-Tabs/BankTabs';
+// import BankTab from "../component/All-Page-Tabs/BankTab";
 
 const WithDraw = () => {
 
@@ -71,7 +72,8 @@ const WithDraw = () => {
                         {/* <UserProfile/> */}
                         <div style={{ backgroundColor: bgColor1 }}>
                             <Flex flexDirection='column'>
-                                <BankTab />
+                                {/* <BankTab /> */}
+                                <BankTab>   </BankTab>
                                 <Box maxW="100%" my={3} mx={3} >
                                     <Flex gap="10px" flexDirection="column" style={{ textAlign: 'left' }}>
                                         <Box className="p-3" width="800px" height="auto" padding="15px 30px" borderRadius="5px" bg={bgGray}>
@@ -136,7 +138,6 @@ const WithDraw = () => {
 };
 
 export default WithDraw;
-
 
 
 

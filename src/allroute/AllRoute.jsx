@@ -34,6 +34,9 @@ import InfoMobileHeader from '../component/InfoMobileHeader'
 import ChangePassword from '../component/All-Page-Tabs/Account-component/ChangePassword'
 import ContactUs from '../page/ContactUs'
 import Ambassador from '../page/Ambassador'
+import Sport9Wicket from '../component/sport/Sport9Wicket'
+import Wallet from '../page/Wallet';
+import Inbox from '../page/Inbox';
 import  BankAccountForm from '../page/BankAccountForm' 
 import WithDraw from '../page/WithDraw'
 import Records from '../page/Records'
@@ -78,9 +81,15 @@ const AllRoute = () => {
       <Route path="InfoMobileHeader"  element={<InfoMobileHeader/>}/>
       <Route path="contact-us"  element={<ContactUs/>}/>
       <Route path="Brand-Ambassador"  element={<Ambassador/>}/>
-      <Route path="BankAccountForm"  element={<BankAccountForm/>}/>
+      <Route path="Wallet"  element={<Wallet/>}/>
+      <Route path="Inbox"  element={<Inbox/>}/>
+      <Route path="Bank"  element={<BankAccountForm/>}/>
       <Route path="WithDraw"  element={<WithDraw/>}/>
       <Route path="Records"  element={<Records/>}/>
+
+      {/* Sport page Routing */}
+      <Route path="9wickets"  element={<Sport9Wicket/>}/>
+      {/* Sport page Routing */}
     </Routes>
   )
 }

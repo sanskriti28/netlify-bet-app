@@ -34,6 +34,7 @@ const initialState = {
    telegramiconBg: "#08c",
    instaiconBg: "#3f729b",
    twittericonBg: "#55acee",
+   twittericonbg :"#000000"
   //  ClickActiveColor:"green"
 };
 

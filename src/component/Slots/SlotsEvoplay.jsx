@@ -23,8 +23,8 @@ import { SimpleGrid, Box } from '@chakra-ui/react';
 
 
 
-function CrashCards() {
-    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9,img10,img11,img12,img13,img14];
+function SlotsEvoplay() {
+    const images = [ img5, img6, img7, img8, img9,img10,img11,img12,img13,img14];
     const {
         bgGray,
     } = useSelector((state) => state.theme);
@@ -60,4 +60,4 @@ function CrashCards() {
 }
 
 
-export default CrashCards;
+export default SlotsEvoplay;

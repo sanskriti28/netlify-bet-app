@@ -18,11 +18,27 @@ import img5 from "../../assets/images/crash/10005.png";
 import img6 from "../../assets/images/crash/10006.png";
 import img7 from "../../assets/images/crash/10007.png";
 
+import ArcadeAg from "../Arcade/ArcadeAg";
+import ArcadeAw from "../Arcade/ArcadeAw";
+import ArcadeBbin from "../Arcade/ArcadeBbin";
+import ArcadeEvoplay from "../Arcade/ArcadeEvoplay";
+import ArcadeJb from "../Arcade/ArcadeJb";
+import ArcadeR88 from "../Arcade/ArcadeR88";
+import ArcadeYb from "../Arcade/ArcadeYb";
+import ArcadeCards from "../Arcade/ArcadeCards";
+
+
 
 import {
     Box,
     HStack,
     Center,
+    Tabs,
+    TabList,
+    Tab,
+    TabIndicator,
+    TabPanels,
+    TabPanel,
 } from '@chakra-ui/react'
 
 
@@ -37,15 +53,18 @@ function ArcadeTabs() {
     } = useSelector((state) => state.theme);
 
     const { t, i18n } = useTranslation();
-    const TabsStyle={
-        minWidth:'100px',
-        height:'100px',
-        width:'auto',
+    const TabsStyle = {
+        minWidth: '100px',
+        height: '100px',
+        width: 'auto',
         borderRadius: '5px',
+        fontWeight:"700",
+        textTransform: 'uppercase',
+        border:`2px solid ${bgGray} `,
     }
     return (
         <>
-          <div className="home-tabs-section all-tabs">
+          {/* <div className="home-tabs-section all-tabs">
                 <Box className="p-3" overflowX="scroll"  css={{"&::-webkit-scrollbar": { display: "none", },}}>
                     <HStack spacing='15px' className="text-base font-bold">
                     <Box style={{ backgroundColor: bgGray, ...TabsStyle }} className="active p-3 home-tab rounded text-center" >
@@ -97,7 +116,96 @@ function ArcadeTabs() {
                         </Box>
                     </HStack>
                 </Box>
-            </div>
+            </div> */}
+             <Tabs  overflowX="auto" className="home-tabs-section all-tabs all_pages_tabsWr" position='relative' variant='unstyled' px="10px">
+            <TabList gap="10px">
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    {t(`All`)}
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img1} alt="9wickets" size={40} style={{ width: "40px" }} />
+                        {t(`JDB`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img2} alt="we" size={40} style={{ width: "40px" }} />
+                        {t(`YB`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img3} alt="bti" size={40} style={{ width: "40px" }} />
+                        {t(`JILI`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img4} alt="cmd" size={40} style={{ width: "40px" }} />
+                        {t(`Fa Chai`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img5} alt="pinnancle" size={40} style={{ width: "40px" }} />
+                        {t(`R8`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img6} alt="saba" size={40} style={{ width: "40px" }} />
+                        {t(`I8`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img7} alt="sbo" size={40} style={{ width: "40px" }} />
+                        {t(`AW`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img1} alt="sbo" size={40} style={{ width: "40px" }} />
+                        {t(`BBin`)}
+                    </Center>
+                </Tab>
+                <Tab style={{ backgroundColor: bgGray, ...TabsStyle }}>
+                    <Center className="flex-col" direction="column" alignItems="center" justifyContent="space-between" h="100%">
+                        <img src={img2} alt="sbo" size={40} style={{ width: "40px" }} />
+                        {t(`HS`)}
+                    </Center>
+                </Tab>
+                
+            </TabList>
+            <TabIndicator mt='-1.5px' height='2px' borderRadius='1px' />
+            <TabPanels>
+                <TabPanel>
+                <ArcadeCards></ArcadeCards>
+                </TabPanel>
+                <TabPanel>
+                   <ArcadeYb></ArcadeYb>
+                </TabPanel>
+                <TabPanel>
+                    <ArcadeR88></ArcadeR88>
+                </TabPanel>
+                <TabPanel>
+                    <ArcadeJb></ArcadeJb>
+                </TabPanel>
+                <TabPanel>
+                    <ArcadeEvoplay></ArcadeEvoplay>
+                </TabPanel>
+                <TabPanel>
+                    <ArcadeBbin></ArcadeBbin>
+                </TabPanel>
+                <TabPanel>
+                    <ArcadeAw></ArcadeAw>
+                </TabPanel>
+                <TabPanel>
+                    <ArcadeAg></ArcadeAg>
+                </TabPanel>
+            </TabPanels>
+        </Tabs >
         </>
     )
 }
