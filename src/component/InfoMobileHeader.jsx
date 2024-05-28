@@ -31,6 +31,8 @@ import { IoIosLogOut } from "react-icons/io";
 import { MdLock } from "react-icons/md";
 import { PiSpinnerBall } from "react-icons/pi";
 import { FiLink } from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
+
 
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
@@ -60,13 +62,22 @@ const InfoMobileHeader = () => {
             <Box>
                 <Flex flexDirection="column">
                     <Box>
-                        <Box style={{ textAlign: 'left' }} maxW="100%" width={{ base: "100%", xl: "280px" }}>
-                            <Flex className="infoTabs" gap="10px" flexDirection={{ base: "row", xl: "column" }} bg={{ base: bgColor1, xl: bgGray }} style={{ textAlign: 'left' }} py="15px">
+                        <Box style={{ textAlign: 'left' }} maxW="100%" width={{ base: "100%", xl: "280px" }} >
+                            <Box bg={{ base: bgGray, xl: bgGray }} padding="15px" borderRadius="5px">
+                                <Flex align="center" gap="10px">
+                                <CgProfile size={28} />
+                                    <Box ml={2}>
+                                        <Text lineHeight="21px">Hello,</Text>
+                                        <Text lineHeight="21px">raj pal</Text>
+                                    </Box>
+                                </Flex>
+                            </Box>
+                            <Flex className="infoTabs" flexWrap="wrap" gap="10px" flexDirection={{ base: "row", xl: "column" }} bg={{ base: bgColor1, xl: bgGray }} style={{ textAlign: 'left' }} py="15px">
                                 <Button gap="15px" height="auto" fontSize="14px" minW={{ base: "85px", xl: "100%" }} bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">
                                     <Link to="/Account" className={`${isActive('/Account') ? 'active-menu' : ''}`}
                                         style={{ display: "flex", gap: "15px", backgroundColor: bgGray }}
                                     >
-                                        <FaUser size={28} />
+                                        <CgProfile size={28} />
                                         {t(`Profile`)}
                                     </Link>
                                 </Button>
@@ -156,95 +167,95 @@ const InfoMobileHeader = () => {
                             </Flex>
                             <Box className="spinwin-wrapper" borderRadius="5px" style={{ backgroundColor: bgGray }} padding="15px" mb="15px">
                                 <Flex className="item-left" align="center" justifyContent="space-between">
-                                   <Flex alignItems="center" gap="10px">
-                                   <PiSpinnerBall mr="2" size={28}/>
-                                    <Box className="content flex flex-col">
-                                        <Text as="span" className="content-label" fontWeight="bold">
-                                            Spin & Win
-                                        </Text>
-                                        <Text as="span" className="ticket" fontWeight="semibold">
-                                            0
-                                        </Text>
-                                    </Box>
-                                   </Flex>
-                                   <Button
-                                    className="spin-button"
-                                    type="button"
-                                    disabled
-                                    colorScheme="blue"
-                                    bg={{base:blackBtn}} _hover={{ bg:{base:blackBtn} }} 
-                                    fontSize={{base:".9rem",xl:"16px"}}
-                                    borderRadius={{base:"25px",xl:"5px"}}
-                                    minW={{base:"110px"}} 
-                                >
-                                    Spin
-                                </Button>
+                                    <Flex alignItems="center" gap="10px">
+                                        <PiSpinnerBall mr="2" size={28} />
+                                        <Box className="content flex flex-col">
+                                            <Text as="span" className="content-label" fontWeight="bold">
+                                                Spin & Win
+                                            </Text>
+                                            <Text as="span" className="ticket" fontWeight="semibold">
+                                                0
+                                            </Text>
+                                        </Box>
+                                    </Flex>
+                                    <Button
+                                        className="spin-button"
+                                        type="button"
+                                        disabled
+                                        colorScheme="blue"
+                                        bg={{ base: blackBtn }} _hover={{ bg: { base: blackBtn } }}
+                                        fontSize={{ base: ".9rem", xl: "16px" }}
+                                        borderRadius={{ base: "25px", xl: "5px" }}
+                                        minW={{ base: "110px" }}
+                                    >
+                                        Spin
+                                    </Button>
                                 </Flex>
-                               
+
                             </Box>
                             <Box className="spinwin-wrapper" borderRadius="5px" style={{ backgroundColor: bgGray }} padding="15px" mb="15px">
                                 <Flex className="item-left" align="center" justifyContent="space-between">
-                                   <Flex alignItems="center" gap="10px">
-                                   <FaHandsHoldingCircle fontSize="28px" />
-                                    <Box className="content flex flex-col">
-                                        <Text as="span" className="content-label" fontWeight="bold">
-                                        Reward Point
-                                        </Text>
-                                        <Text as="span" className="ticket" fontWeight="semibold">
-                                            0
-                                        </Text>
-                                    </Box>
-                                   </Flex>
-                                   <Button
-                                    className="spin-button"
-                                    type="button"
-                                    colorScheme="blue"
-                                    bg={{base:blackBtn}} _hover={{ bg:{base:blackBtn} }} 
-                                    fontSize={{base:".9rem",xl:"16px"}}
-                                    borderRadius={{base:"25px",xl:"5px"}}
-                                    minW={{base:"110px"}} 
-                                >
-                                    Redeem
-                                </Button>
+                                    <Flex alignItems="center" gap="10px">
+                                        <FaHandsHoldingCircle fontSize="28px" />
+                                        <Box className="content flex flex-col">
+                                            <Text as="span" className="content-label" fontWeight="bold">
+                                                Reward Point
+                                            </Text>
+                                            <Text as="span" className="ticket" fontWeight="semibold">
+                                                0
+                                            </Text>
+                                        </Box>
+                                    </Flex>
+                                    <Button
+                                        className="spin-button"
+                                        type="button"
+                                        colorScheme="blue"
+                                        bg={{ base: blackBtn }} _hover={{ bg: { base: blackBtn } }}
+                                        fontSize={{ base: ".9rem", xl: "16px" }}
+                                        borderRadius={{ base: "25px", xl: "5px" }}
+                                        minW={{ base: "110px" }}
+                                    >
+                                        Redeem
+                                    </Button>
                                 </Flex>
-                               
+
                             </Box>
-                            <Box className="spinwin-wrapper" borderRadius="5px"   mb="15px">
-                            <Heading as="h6">Referral</Heading>
-                                <Flex className="item-left" align="center"  borderRadius="5px" padding="25px" justifyContent="space-between" style={{ backgroundColor: bgGray }}>
-                                   <Flex alignItems="center" gap="10px">
-                                   <FiLink fontSize="24px"/>
-                                    <Box className="content flex flex-col">
-                                        <Text as="span" className="content-label" fontWeight="bold">
-                                            https://www.b8visa.com/en-IN/referral-register/
-                                        </Text>
-                                    </Box>
-                                   </Flex>
+                            <Box className="spinwin-wrapper" borderRadius="5px" mb="15px">
+                                <Heading as="h6">Referral</Heading>
+                                <Flex className="item-left" align="center" borderRadius="5px" padding="25px" justifyContent="space-between" style={{ backgroundColor: bgGray }}>
+                                    <Flex alignItems="center" gap="10px">
+                                        <FiLink fontSize="24px" />
+                                        <Box className="content flex flex-col">
+                                            <Text as="span" className="content-label" fontWeight="bold">
+                                                https://www.b8visa.com/en-IN/referral-register/
+                                            </Text>
+                                        </Box>
+                                    </Flex>
                                 </Flex>
-                               <Flex gap="10px" mt="10px">
-                               <Button
-                                    className="spin-button"
-                                    type="button"
-                                    color={{PrimaryText}}
-                                    bg={{base:bgYellow}} _hover={{ bg:{base:bgYellow} }} 
-                                    fontSize={{base:".9rem",xl:"16px"}}
-                                    borderRadius={{base:"25px",xl:"5px"}}
-                                    w={{base:"100%"}} 
-                                >
-                                    Copy
-                                </Button>
-                               <Button
-                                    className="spin-button"
-                                    type="button"
-                                    colorScheme="blue"
-                                    bg={{base:blackBtn}} _hover={{ bg:{base:blackBtn} }} 
-                                    fontSize={{base:".9rem",xl:"16px"}}
-                                    borderRadius={{base:"25px",xl:"5px"}}
-                                    w={{base:"100%"}} 
-                                >
-                                    Share
-                                </Button>
-                               </Flex>
+                                <Flex gap="10px" mt="10px">
+                                    <Button
+                                        className="spin-button"
+                                        type="button"
+                                        color={{ PrimaryText }}
+                                        bg={{ base: bgYellow }} _hover={{ bg: { base: bgYellow } }}
+                                        fontSize={{ base: ".9rem", xl: "16px" }}
+                                        borderRadius={{ base: "25px", xl: "5px" }}
+                                        w={{ base: "100%" }}
+                                    >
+                                        Copy
+                                    </Button>
+                                    <Button
+                                        className="spin-button"
+                                        type="button"
+                                        colorScheme="blue"
+                                        bg={{ base: blackBtn }} _hover={{ bg: { base: blackBtn } }}
+                                        fontSize={{ base: ".9rem", xl: "16px" }}
+                                        borderRadius={{ base: "25px", xl: "5px" }}
+                                        w={{ base: "100%" }}
+                                    >
+                                        Share
+                                    </Button>
+                                </Flex>
                             </Box>
                             {/* <Flex gap="10px" flexDirection={{base:"row", xl:"column"}} bg={{base:bgColor1, xl:bgGray}} style={{ textAlign: 'left' }} mt={4}>
                                 <Button gap="15px" bg="transparent" _hover={{ bg: 'transparent', }} justifyContent="flex-start">

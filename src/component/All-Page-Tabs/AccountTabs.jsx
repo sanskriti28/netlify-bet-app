@@ -49,7 +49,7 @@ function AccountTabs() {
             <div className="home-tabs-section all-tabs">
                
 
-                <Tabs marginLeft="10px">
+                <Tabs marginLeft="10px" display={{base:"none", xl:"block"}}>
                     <TabList borderBottom="none" gap="10px">
                         <Tab style={{ backgroundColor: bgGray, ...TabsStyle, width: "110px", height: "93px" }} className="p-3 home-tab rounded text-center" >
                             <Center h="100%">

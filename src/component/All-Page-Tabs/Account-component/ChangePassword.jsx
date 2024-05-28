@@ -46,7 +46,7 @@ const ChangePassword = () => {
     <Flex flexDirection="column">
       <Box maxW="100%" my={3}>
         <Flex gap="10px" flexDirection="column" style={{ textAlign: 'left' }}>
-          <Box className="p-3" width="800px" height="auto" padding="15px 34px" borderRadius="5px" bg={bgGray}>
+          <Box className="p-3" maxW={{ base: "100%", xl: "800px" }} height="auto" padding="15px 34px" borderRadius="5px" bg={bgGray}>
             <Box display="flex" flexDirection="column">
               <Flex>
                 <Box width="250px" margin="5px" fontWeight="700">Old Password</Box>
